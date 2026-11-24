@@ -1,0 +1,44 @@
+{
+  "name": "InquiryNote",
+  "type": "object",
+  "properties": {
+    "inquiry_id": {
+      "type": "string",
+      "title": "Inquiry"
+    },
+    "body": {
+      "type": "string",
+      "title": "Note"
+    },
+    "author": {
+      "type": "string",
+      "title": "Author"
+    }
+  },
+  "required": [
+    "inquiry_id",
+    "body"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

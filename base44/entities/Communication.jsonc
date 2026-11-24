@@ -1,0 +1,88 @@
+{
+  "name": "Communication",
+  "type": "object",
+  "properties": {
+    "customer_id": {
+      "type": "string",
+      "title": "Customer"
+    },
+    "project_id": {
+      "type": "string",
+      "title": "Project"
+    },
+    "direction": {
+      "type": "string",
+      "title": "Direction",
+      "enum": [
+        "Outbound",
+        "Inbound"
+      ],
+      "enumColors": [
+        "blue",
+        "gray"
+      ],
+      "default": "Outbound"
+    },
+    "to_email": {
+      "type": "string",
+      "title": "To"
+    },
+    "subject": {
+      "type": "string",
+      "title": "Subject"
+    },
+    "body": {
+      "type": "string",
+      "title": "Message"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Sent",
+        "Failed"
+      ],
+      "enumColors": [
+        "green",
+        "red"
+      ],
+      "default": "Sent"
+    },
+    "sent_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Sent at"
+    },
+    "error": {
+      "type": "string",
+      "title": "Error detail"
+    }
+  },
+  "required": [
+    "to_email",
+    "subject",
+    "body"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

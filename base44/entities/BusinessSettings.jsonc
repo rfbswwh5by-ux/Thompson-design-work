@@ -1,0 +1,84 @@
+{
+  "name": "BusinessSettings",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string",
+      "title": "Key",
+      "default": "main"
+    },
+    "business_name": {
+      "type": "string",
+      "title": "Business name"
+    },
+    "email": {
+      "type": "string",
+      "title": "Business email"
+    },
+    "phone": {
+      "type": "string",
+      "title": "Business phone"
+    },
+    "location_note": {
+      "type": "string",
+      "title": "Location note"
+    },
+    "logo_url": {
+      "type": "string",
+      "title": "Logo"
+    },
+    "favicon_url": {
+      "type": "string",
+      "title": "Favicon"
+    },
+    "social_instagram": {
+      "type": "string",
+      "title": "Instagram"
+    },
+    "social_linkedin": {
+      "type": "string",
+      "title": "LinkedIn"
+    },
+    "social_facebook": {
+      "type": "string",
+      "title": "Facebook"
+    },
+    "social_x": {
+      "type": "string",
+      "title": "X"
+    },
+    "seo_title": {
+      "type": "string",
+      "title": "SEO title"
+    },
+    "seo_description": {
+      "type": "string",
+      "title": "SEO description"
+    },
+    "footer_tagline": {
+      "type": "string",
+      "title": "Footer tagline"
+    }
+  },
+  "required": [
+    "key"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

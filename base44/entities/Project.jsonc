@@ -1,0 +1,118 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Project name"
+    },
+    "customer_id": {
+      "type": "string",
+      "title": "Customer"
+    },
+    "business_name": {
+      "type": "string",
+      "title": "Business name"
+    },
+    "description": {
+      "type": "string",
+      "title": "Project description"
+    },
+    "website_type": {
+      "type": "string",
+      "title": "Website type"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "title": "Start date"
+    },
+    "target_date": {
+      "type": "string",
+      "format": "date",
+      "title": "Target completion"
+    },
+    "stage": {
+      "type": "string",
+      "title": "Stage",
+      "enum": [
+        "New Client",
+        "Initial Consultation",
+        "Project Requirements",
+        "Design & Development",
+        "Internal Review",
+        "Demo Ready",
+        "Client Review",
+        "Revisions Requested",
+        "Final Approval",
+        "Completed",
+        "Website Launched"
+      ],
+      "enumColors": [
+        "blue",
+        "blue",
+        "yellow",
+        "purple",
+        "yellow",
+        "pink",
+        "yellow",
+        "red",
+        "yellow",
+        "green",
+        "green"
+      ],
+      "default": "New Client"
+    },
+    "demo_url": {
+      "type": "string",
+      "title": "Demo URL"
+    },
+    "live_url": {
+      "type": "string",
+      "title": "Live website URL"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Private notes"
+    },
+    "demo_shared": {
+      "type": "boolean",
+      "title": "Demo shared with client",
+      "default": false
+    },
+    "demo_shared_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Demo shared at"
+    },
+    "share_token": {
+      "type": "string",
+      "title": "Portal share token"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

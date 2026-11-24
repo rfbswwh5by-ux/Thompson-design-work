@@ -1,0 +1,81 @@
+{
+  "name": "Customer",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "title": "Full name"
+    },
+    "business_name": {
+      "type": "string",
+      "title": "Business name"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "phone": {
+      "type": "string",
+      "title": "Phone"
+    },
+    "industry": {
+      "type": "string",
+      "title": "Industry"
+    },
+    "website": {
+      "type": "string",
+      "title": "Current website"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Potential Customer",
+        "Active Customer",
+        "Previous Customer",
+        "Not Interested"
+      ],
+      "enumColors": [
+        "blue",
+        "green",
+        "gray",
+        "red"
+      ],
+      "default": "Potential Customer"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Private notes"
+    },
+    "source": {
+      "type": "string",
+      "title": "Source",
+      "default": "Website inquiry"
+    }
+  },
+  "required": [
+    "full_name"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

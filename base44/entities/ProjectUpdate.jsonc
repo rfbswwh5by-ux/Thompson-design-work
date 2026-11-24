@@ -1,0 +1,66 @@
+{
+  "name": "ProjectUpdate",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "title": "Project"
+    },
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "body": {
+      "type": "string",
+      "title": "Update"
+    },
+    "update_type": {
+      "type": "string",
+      "title": "Type",
+      "enum": [
+        "Progress",
+        "Milestone",
+        "Feedback Request",
+        "Revision"
+      ],
+      "enumColors": [
+        "blue",
+        "green",
+        "purple",
+        "yellow"
+      ],
+      "default": "Progress"
+    },
+    "is_customer_visible": {
+      "type": "boolean",
+      "title": "Visible to customer",
+      "default": true
+    }
+  },
+  "required": [
+    "project_id",
+    "title"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

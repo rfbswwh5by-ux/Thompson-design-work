@@ -1,0 +1,49 @@
+{
+  "name": "ProjectFile",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "title": "Project"
+    },
+    "name": {
+      "type": "string",
+      "title": "File name"
+    },
+    "file_uri": {
+      "type": "string",
+      "title": "Stored file"
+    },
+    "file_type": {
+      "type": "string",
+      "title": "File type"
+    }
+  },
+  "required": [
+    "project_id",
+    "name",
+    "file_uri"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

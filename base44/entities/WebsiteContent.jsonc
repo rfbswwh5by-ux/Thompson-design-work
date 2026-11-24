@@ -1,0 +1,116 @@
+{
+  "name": "WebsiteContent",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string",
+      "title": "Key",
+      "default": "main"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "draft",
+        "published"
+      ],
+      "enumColors": [
+        "gray",
+        "green"
+      ],
+      "default": "published"
+    },
+    "hero_eyebrow": {
+      "type": "string",
+      "title": "Hero eyebrow"
+    },
+    "hero_headline_top": {
+      "type": "string",
+      "title": "Hero headline line 1"
+    },
+    "hero_headline_accent": {
+      "type": "string",
+      "title": "Hero headline accent"
+    },
+    "hero_headline_bottom": {
+      "type": "string",
+      "title": "Hero headline line 3"
+    },
+    "hero_headline": {
+      "type": "string",
+      "title": "Hero supporting headline"
+    },
+    "hero_description": {
+      "type": "string",
+      "title": "Hero description"
+    },
+    "hero_primary_cta": {
+      "type": "string",
+      "title": "Primary button label"
+    },
+    "hero_secondary_cta": {
+      "type": "string",
+      "title": "Secondary button label"
+    },
+    "about_title": {
+      "type": "string",
+      "title": "About page title"
+    },
+    "about_body": {
+      "type": "string",
+      "title": "About page body"
+    },
+    "about_image_url": {
+      "type": "string",
+      "title": "About image"
+    },
+    "contact_intro": {
+      "type": "string",
+      "title": "Contact page intro"
+    },
+    "footer_tagline": {
+      "type": "string",
+      "title": "Footer tagline"
+    },
+    "seo_title": {
+      "type": "string",
+      "title": "SEO title"
+    },
+    "seo_description": {
+      "type": "string",
+      "title": "SEO description"
+    }
+  },
+  "required": [
+    "key"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "data.status": "published"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
